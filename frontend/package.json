@@ -171,7 +171,7 @@
     "start": "vite",
     "dev": "vite",
     "build:watch": "cross-env NODE_OPTIONS=--max-old-space-size=8192  vite build --watch --outDir ../marimo/_static",
-    "build": "cross-env NODE_OPTIONS=--max-old-space-size=8192 vite build --ourDir ../marimo/_static",
+    "build": "cross-env NODE_OPTIONS=--max-old-space-size=8192 vite build --outDir ../marimo/_static",
     "test": "vitest",
     "typecheck": "tsc",
     "lint": "run-s lint:biome lint:eslint lint:stylelint",

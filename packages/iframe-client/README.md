@@ -157,3 +157,12 @@ This library uses [bidc](https://github.com/zaaack/bidc) for bidirectional commu
 - Error handling
 
 The marimo application automatically sets up the necessary handlers when loaded in an iframe, so no additional configuration is needed on the marimo side.
+
+## Local testing
+- pixi run hatch shell
+- cd packages/iframe-client && pnpm run build
+- cd frontend && pnpm run build
+- marimo export html-wasm ../test-notebooks/intro.py -o ../test-notebooks/output_dir --mode edit --show-code -f
+- cd ../test-notebooks && python -m http.server 8000
+- cd packages/iframe-client && python -m http.server 8001
+- Go to localhost:8001 and to example.html
