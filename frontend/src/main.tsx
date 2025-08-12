@@ -14,6 +14,7 @@ if (el) {
   if (!window.__MARIMO_MOUNT_CONFIG__) {
     throw new Error("[marimo] mount config not found");
   }
+    console.debug("[marimo] mounting app", window.__MARIMO_MOUNT_CONFIG__);
   mount(window.__MARIMO_MOUNT_CONFIG__, el);
 } else {
   throw new Error("[marimo] root element not found");

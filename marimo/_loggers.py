@@ -27,7 +27,7 @@ from marimo._utils.log_formatter import LogFormatter
 # See https://docs.python.org/3/howto/logging.html#configuring-logging-for-a-library
 
 # Global log level for loggers
-_LOG_LEVEL: int = logging.WARNING
+_LOG_LEVEL: int = logging.DEBUG
 
 # Custom log formatter
 _LOG_FORMATTER = LogFormatter()

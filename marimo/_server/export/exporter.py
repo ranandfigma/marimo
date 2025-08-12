@@ -572,6 +572,7 @@ def get_html_contents() -> str:
         return requests.get(url).text()
 
     index_html = Path(ROOT) / "index.html"
+    print(index_html)
     return index_html.read_text(encoding="utf-8")
 
 

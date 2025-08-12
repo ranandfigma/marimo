@@ -1,0 +1,29 @@
+{
+  "name": "@marimo-team/iframe-client",
+  "version": "0.0.1",
+  "description": "Client library for controlling marimo notebooks embedded in iframes",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "type-check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "bidc": "^0.0.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "tsup": "^8.0.0",
+    "typescript": "^5.0.0"
+  },
+  "peerDependencies": {},
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "Apache-2.0"
+}

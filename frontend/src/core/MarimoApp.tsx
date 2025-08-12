@@ -5,7 +5,7 @@ import "iconify-icon";
 
 import { Provider as SlotzProvider } from "@marimo-team/react-slotz";
 import type React from "react";
-import { memo, type PropsWithChildren, Suspense } from "react";
+import { memo, type PropsWithChildren, Suspense, useEffect } from "react";
 import { TailwindIndicator } from "@/components/debug/indicator";
 import { useAppConfig, useResolvedMarimoConfig } from "@/core/config/config";
 import { getInitialAppMode } from "@/core/mode";
@@ -16,6 +16,7 @@ import { ModalProvider } from "../components/modal/ImperativeModal";
 import { Toaster } from "../components/ui/toaster";
 import { TooltipProvider } from "../components/ui/tooltip";
 import { slotsController } from "./slots/slots";
+import { initializeIframeApi } from "./iframe/iframe-api";
 
 // Force tailwind classnames
 // tailwind only creates css for classnames that exist the FE files
@@ -50,6 +51,11 @@ export const MarimoApp: React.FC = memo(() => {
   const [userConfig] = useResolvedMarimoConfig();
   const [appConfig] = useAppConfig();
   const editorFontSize = toRem(userConfig.display.code_editor_font_size);
+
+  useEffect(() => {
+    console.log("[child] initializing Marimo iframe API");
+    initializeIframeApi();
+  }, []);
 
   const renderBody = () => {
     const initialMode = getInitialAppMode();
